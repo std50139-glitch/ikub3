@@ -1,1 +1,444 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ไอไอหม่าล่าทั่ง - ร้านหมูหม่าล่าทั่งแสนอร่อย</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Kanit', sans-serif; }
+        .hero-bg {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .bounce-in {
+            animation: bounceIn 0.6s ease-out;
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="text-4xl">🐷</div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-red-600">ไอไอหม่าล่าทั่ง</h1>
+                        <p class="text-sm text-gray-600">หมูหม่าล่าทั่งแสนอร่อย</p>
+                    </div>
+                </div>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#home" class="text-gray-700 hover:text-red-600 font-medium transition-colors">หน้าแรก</a>
+                    <a href="#menu" class="text-gray-700 hover:text-red-600 font-medium transition-colors">เมนู</a>
+                    <a href="#about" class="text-gray-700 hover:text-red-600 font-medium transition-colors">เกี่ยวกับเรา</a>
+                    <a href="#contact" class="text-gray-700 hover:text-red-600 font-medium transition-colors">ติดต่อ</a>
+                </nav>
+                <button class="bg-red-600 text-white px-6 py-2 rounded-full hover:bg-red-700 transition-colors font-medium">
+                    สั่งออนไลน์
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <div class="bounce-in">
+                <h2 class="text-5xl font-bold mb-4">ยินดีต้อนรับสู่ไอไอหม่าล่าทั่ง</h2>
+                <p class="text-xl mb-8 opacity-90">หมูหม่าล่าทั่งสูตรต้นตำรับ รสชาติเข้มข้น หอมหวาน</p>
+                <div class="flex justify-center space-x-4">
+                    <button onclick="scrollToMenu()" class="bg-white text-red-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+                        ดูเมนู
+                    </button>
+                    <button class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-red-600 transition-colors">
+                        โทรสั่ง
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold text-gray-800 mb-4">เมนูแนะนำ</h3>
+                <p class="text-gray-600 text-lg">หมูหม่าล่าทั่งสูตรพิเศษ รสชาติที่ไม่เหมือนใคร</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Menu Item 1 -->
+                <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center">
+                        <div class="text-6xl">🥩</div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-2">หมูหม่าล่าทั่งคลาสสิค</h4>
+                        <p class="text-gray-600 mb-4">หมูสามชั้นนุ่ม ๆ หม่าล่าทั่งสูตรต้นตำรับ</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-red-600">฿120</span>
+                            <button onclick="addToCart('หมูหม่าล่าทั่งคลาสสิค', 120)" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
+                                สั่งเลย
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 2 -->
+                <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center">
+                        <div class="text-6xl">🌶️</div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-2">หมูหม่าล่าทั่งเผ็ดร้อน</h4>
+                        <p class="text-gray-600 mb-4">รสเผ็ดจัดจ้าน สำหรับคนชอบความเผ็ด</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-red-600">฿130</span>
+                            <button onclick="addToCart('หมูหม่าล่าทั่งเผ็ดร้อน', 130)" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
+                                สั่งเลย
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 3 -->
+                <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center">
+                        <div class="text-6xl">🥚</div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-2">หมูหม่าล่าทั่งไข่ดาว</h4>
+                        <p class="text-gray-600 mb-4">เสิร์ฟพร้อมไข่ดาวร้อน ๆ</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-red-600">฿140</span>
+                            <button onclick="addToCart('หมูหม่าล่าทั่งไข่ดาว', 140)" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
+                                สั่งเลย
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 4 -->
+                <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
+                        <div class="text-6xl">🥬</div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-2">หมูหม่าล่าทั่งผักรวม</h4>
+                        <p class="text-gray-600 mb-4">เพิ่มผักสดใส่ เพื่อสุขภาพ</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-red-600">฿150</span>
+                            <button onclick="addToCart('หมูหม่าล่าทั่งผักรวม', 150)" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
+                                สั่งเลย
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 5 -->
+                <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center">
+                        <div class="text-6xl">🍜</div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-2">หมูหม่าล่าทั่งซุปร้อน</h4>
+                        <p class="text-gray-600 mb-4">เสิร์ฟแบบซุปร้อน ๆ อร่อยแบบจีน</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-red-600">฿160</span>
+                            <button onclick="addToCart('หมูหม่าล่าทั่งซุปร้อน', 160)" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
+                                สั่งเลย
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 6 -->
+                <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-indigo-400 to-purple-600 flex items-center justify-center">
+                        <div class="text-6xl">👑</div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-2">หมูหม่าล่าทั่งพิเศษ</h4>
+                        <p class="text-gray-600 mb-4">เมนูพิเศษของร้าน หมูเยอะ รสจัดจ้าน</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-red-600">฿180</span>
+                            <button onclick="addToCart('หมูหม่าล่าทั่งพิเศษ', 180)" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
+                                สั่งเลย
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Section -->
+    <div id="cart" class="fixed bottom-4 right-4 z-50">
+        <button onclick="toggleCart()" class="bg-red-600 text-white p-4 rounded-full shadow-lg hover:bg-red-700 transition-colors">
+            <span class="text-2xl">🛒</span>
+            <span id="cart-count" class="absolute -top-2 -right-2 bg-yellow-400 text-red-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">0</span>
+        </button>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-xl p-6 w-full max-w-md">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-bold">ตรวจสอบออเดอร์</h3>
+                    <button onclick="toggleCart()" class="text-gray-500 hover:text-gray-700">✕</button>
+                </div>
+                <div id="cart-items" class="space-y-3 mb-4">
+                    <p class="text-gray-500 text-center py-8">ยังไม่มีรายการสั่งซื้อ</p>
+                </div>
+                <div class="border-t pt-4">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="font-semibold">รวมทั้งหมด:</span>
+                        <span id="cart-total" class="text-xl font-bold text-red-600">฿0</span>
+                    </div>
+                    <button onclick="checkout()" class="w-full bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition-colors font-semibold">
+                        สั่งซื้อ
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold text-gray-800 mb-4">เกี่ยวกับไอไอหม่าล่าทั่ง</h3>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    ร้านไอไอหม่าล่าทั่งเป็นร้านอาหารที่เชี่ยวชาญด้านหมูหม่าล่าทั่งสูตรต้นตำรับ 
+                    ด้วยประสบการณ์กว่า 10 ปี เราใส่ใจในคุณภาพวัตถุดิบและรสชาติที่แท้จริง
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="text-5xl mb-4">🏆</div>
+                    <h4 class="text-xl font-semibold mb-2">คุณภาพเยี่ยม</h4>
+                    <p class="text-gray-600">วัตถุดิบสดใหม่ทุกวัน</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl mb-4">⚡</div>
+                    <h4 class="text-xl font-semibold mb-2">เสิร์ฟเร็ว</h4>
+                    <p class="text-gray-600">ได้รับอาหารภายใน 15 นาที</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl mb-4">💝</div>
+                    <h4 class="text-xl font-semibold mb-2">ราคาดี</h4>
+                    <p class="text-gray-600">อร่อยคุ้มค่า ราคาเป็นมิตร</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold text-gray-800 mb-4">ติดต่อเรา</h3>
+                <p class="text-gray-600 text-lg">พร้อมให้บริการทุกวัน</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="text-2xl">📍</div>
+                        <div>
+                            <h4 class="font-semibold">ที่อยู่</h4>
+                            <p class="text-gray-600">123 ถนนอร่อย แขวงกินดี เขตอิ่มอร่อย กรุงเทพฯ 10110</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="text-2xl">📞</div>
+                        <div>
+                            <h4 class="font-semibold">โทรศัพท์</h4>
+                            <p class="text-gray-600">02-123-4567</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="text-2xl">⏰</div>
+                        <div>
+                            <h4 class="font-semibold">เวลาเปิด-ปิด</h4>
+                            <p class="text-gray-600">จันทร์-อาทิตย์ 10:00-22:00</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <h4 class="text-xl font-semibold mb-4">สั่งออนไลน์</h4>
+                    <div class="space-y-4">
+                        <input type="text" placeholder="ชื่อ-นามสกุล" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                        <input type="tel" placeholder="เบอร์โทรศัพท์" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                        <textarea placeholder="ที่อยู่จัดส่ง" rows="3" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"></textarea>
+                        <button onclick="submitOrder()" class="w-full bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition-colors font-semibold">
+                            ส่งข้อมูล
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center space-x-3 mb-4">
+                <div class="text-3xl">🐷</div>
+                <h4 class="text-xl font-bold">ไอไอหม่าล่าทั่ง</h4>
+            </div>
+            <p class="text-gray-400 mb-4">หมูหม่าล่าทั่งแสนอร่อย รสชาติที่ไม่เหมือนใคร</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">Facebook</a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">Instagram</a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">Line</a>
+            </div>
+            <div class="mt-6 pt-6 border-t border-gray-700">
+                <p class="text-gray-400">&copy; 2024 ไอไอหม่าล่าทั่ง สงวนลิขสิทธิ์</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let cart = [];
+        let cartTotal = 0;
+
+        function scrollToMenu() {
+            document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function addToCart(itemName, price) {
+            const existingItem = cart.find(item => item.name === itemName);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ name: itemName, price: price, quantity: 1 });
+            }
+            
+            updateCartDisplay();
+            
+            // Show success animation
+            const button = event.target;
+            const originalText = button.textContent;
+            button.textContent = 'เพิ่มแล้ว!';
+            button.classList.add('bg-green-600');
+            button.classList.remove('bg-red-600');
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.classList.remove('bg-green-600');
+                button.classList.add('bg-red-600');
+            }, 1000);
+        }
+
+        function updateCartDisplay() {
+            const cartCount = document.getElementById('cart-count');
+            const cartItems = document.getElementById('cart-items');
+            const cartTotalElement = document.getElementById('cart-total');
+            
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartTotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            
+            cartCount.textContent = totalItems;
+            cartTotalElement.textContent = `฿${cartTotal}`;
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p class="text-gray-500 text-center py-8">ยังไม่มีรายการสั่งซื้อ</p>';
+            } else {
+                cartItems.innerHTML = cart.map(item => `
+                    <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                        <div>
+                            <h5 class="font-medium">${item.name}</h5>
+                            <p class="text-sm text-gray-600">฿${item.price} x ${item.quantity}</p>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <button onclick="changeQuantity('${item.name}', -1)" class="bg-red-100 text-red-600 w-8 h-8 rounded-full hover:bg-red-200">-</button>
+                            <span class="w-8 text-center">${item.quantity}</span>
+                            <button onclick="changeQuantity('${item.name}', 1)" class="bg-red-100 text-red-600 w-8 h-8 rounded-full hover:bg-red-200">+</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function changeQuantity(itemName, change) {
+            const item = cart.find(item => item.name === itemName);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    cart = cart.filter(cartItem => cartItem.name !== itemName);
+                }
+                updateCartDisplay();
+            }
+        }
+
+        function toggleCart() {
+            const modal = document.getElementById('cart-modal');
+            modal.classList.toggle('hidden');
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert('กรุณาเลือกเมนูก่อนสั่งซื้อ');
+                return;
+            }
+            
+            const orderSummary = cart.map(item => `${item.name} x${item.quantity}`).join('\n');
+            alert(`ขอบคุณสำหรับการสั่งซื้อ!\n\nรายการ:\n${orderSummary}\n\nรวม: ฿${cartTotal}\n\nเราจะติดต่อกลับเพื่อยืนยันออเดอร์`);
+            
+            // Reset cart
+            cart = [];
+            updateCartDisplay();
+            toggleCart();
+        }
+
+        function submitOrder() {
+            const name = document.querySelector('input[placeholder="ชื่อ-นามสกุล"]').value;
+            const phone = document.querySelector('input[placeholder="เบอร์โทรศัพท์"]').value;
+            const address = document.querySelector('textarea[placeholder="ที่อยู่จัดส่ง"]').value;
+            
+            if (!name || !phone || !address) {
+                alert('กรุณากรอกข้อมูลให้ครบถ้วน');
+                return;
+            }
+            
+            alert(`ขอบคุณคุณ${name}!\nเราได้รับข้อมูลการติดต่อแล้ว\nจะติดต่อกลับที่ ${phone} เร็วๆ นี้`);
+            
+            // Clear form
+            document.querySelector('input[placeholder="ชื่อ-นามสกุล"]').value = '';
+            document.querySelector('input[placeholder="เบอร์โทรศัพท์"]').value = '';
+            document.querySelector('textarea[placeholder="ที่อยู่จัดส่ง"]').value = '';
+        }
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97a40736b30b893b',t:'MTc1NzA1NzQ5OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
 
